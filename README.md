@@ -15,4 +15,5 @@ JS class to hold an array of functions
 ## API
 Props
 w: the width of the window
+
 b: jQuery reference to 'body'
