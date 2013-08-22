@@ -1,0 +1,41 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>Resizer</title>
+	<link rel="stylesheet" href="bower_components/bootstrap.css/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="styles/resizer.css">
+</head>
+<body>
+	<div class="container">
+		<div class="hero-unit">
+			<h1>resizer</h1>
+			<p>Width: <span id="widthDisplay"></span></p>
+		</div>
+		<div class="row">
+			<div class="span_12">
+				<p>Resizer contains an array of functions called when the window has been resized.</p>
+				<p>The scope of the functions that are called is set to the resizer object. this.w will return the width of the window</p>
+			</div>
+		</div>
+	</div>
+	<script src="bower_components/jquery/jquery.min.js"></script>
+	<script src="js/resizer.js"></script>
+	<script>
+		(function(global,$){
+			var resizer = new Resizer(),
+				widthDisplay = $('#widthDisplay');
+
+			widthDisplay.text(resizer.w);
+
+			resizer.add(function(){
+				widthDisplay.text(this.w);
+			})
+		})(window,jQuery);
+	</script>
+</body>
+</html>
